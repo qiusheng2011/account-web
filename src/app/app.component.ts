@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AccountService } from './app.config.server';
 import { FooterComponent } from './footer/footer.component';
-
 
 @Component({
   selector: 'app-root',
@@ -24,8 +28,8 @@ import { FooterComponent } from './footer/footer.component';
 export class AppComponent {
   title = 'account-web';
   loginForm = this.fb.group({
-    username: '',
-    password: '',
+    username: ['', Validators.required],
+    password: ['', Validators.required],
   });
 
   constructor(
@@ -35,6 +39,11 @@ export class AppComponent {
 
   loginSubmit(): void {
     console.log(this.loginForm.value);
+    if (this.loginForm.invalid) {
+      console.error('表单无效');
+      this.loginForm.reset()
+      return;
+    }
     const response = this.account_service.login(this.loginForm.value);
     response.subscribe((resp) => {
       console.log(resp);

@@ -14,7 +14,7 @@
     <form class="login_form" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
       <div class="login_name_div">
         <label>用户名:</label>
-        <input id="username" type="text" name="username" formControlName="username">
+        <input id="username" type="text" name="username" formControlName="username"><p>{{ loginForm.value.username}}</p>
       </div>
       <div class="login_password_div">
         <label>密码:</label>

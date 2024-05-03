@@ -1,0 +1,9 @@
+<div>
+    <form>
+        <div> <label>邮箱：</label><input type="email" [formControl="email"></div>
+        <div><label>用户名：</label><input type="text" [formControl]="accountName"> </div>
+        <div><label>密码：</label><input type="password" [formControl]="password"></div>
+        <div><label>确认密码</label><input type="password" [formControl]="confirmPassword"></div>
+        <button type="submit" (click)="onSubmit()">注册</button>
+    </form>
+</div>
