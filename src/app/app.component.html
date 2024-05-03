@@ -1,0 +1,40 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<main class="main">
+
+  <div class="login_div">
+    <form class="login_form" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+      <div class="login_name_div">
+        <label>用户名:</label>
+        <input id="username" type="text" name="username" formControlName="username">
+      </div>
+      <div class="login_password_div">
+        <label>密码:</label>
+        <input id="password" type="password" name="password" formControlName="password">
+      </div>
+      <div class="form_button_div">
+        <button id="register_b">注册</button>
+        <button id="login_b" type="submit">登录</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</main>
+<app-footer> </app-footer>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
