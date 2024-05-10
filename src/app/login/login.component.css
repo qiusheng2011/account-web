@@ -1,0 +1,16 @@
+.login_div {
+    background-color: rgb(194, 34, 34);
+    width: 300px;
+    display: flex;
+    text-align: center;
+}
+
+.login_div div {
+    margin: 20px auto;
+    width: 300px;
+}
+
+.login_form label {
+    width: 90px;
+    text-align: right;
+}

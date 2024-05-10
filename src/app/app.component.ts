@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AccountService } from './app.config.server';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -20,34 +21,12 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     HttpClientModule,
     FooterComponent,
+    LoginComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [AccountService],
 })
 export class AppComponent {
-  title = 'account-web';
-  loginForm = this.fb.group({
-    username: ['', Validators.required],
-    password: ['', Validators.required],
-  });
-
-  constructor(
-    private fb: FormBuilder,
-    private account_service: AccountService
-  ) {}
-
-  loginSubmit(): void {
-    console.log(this.loginForm.value);
-    if (this.loginForm.invalid) {
-      console.error('表单无效');
-      this.loginForm.reset()
-      return;
-    }
-    const response = this.account_service.login(this.loginForm.value);
-    response.subscribe((resp) => {
-      console.log(resp);
-      alert(JSON.stringify(resp.body));
-    });
-  }
+  
 }

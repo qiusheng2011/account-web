@@ -2,19 +2,7 @@
     background-color: black;
     color: white;
 }
-
-.login_div {
-    background-color: red;
-    width:  300px;
+app-login {
     display: flex;
+    justify-content: center;
 }
-.login_div div {
-    margin: 20px auto;
-    width: 300px;
-}
-
-.login_form label {
-    width:90px;
-    text-align: right;
-}
-
