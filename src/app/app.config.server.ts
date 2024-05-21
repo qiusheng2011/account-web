@@ -11,7 +11,7 @@ import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
 const serverConfig: ApplicationConfig = {
-  providers: [provideServerRendering()],
+  providers:[]
 };
 
 export const config = mergeApplicationConfig(appConfig, serverConfig);

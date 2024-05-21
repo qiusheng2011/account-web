@@ -1,20 +1,23 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule, FormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
     email = new FormControl('', Validators.required);
     accountName = new FormControl('', Validators.required);
-
     password = new FormControl('', Validators.required);
     confirmPassword = new FormControl('', Validators.required);
-    onSubmit(e:Event): void {
 
+    onSubmit(): void {
+      if (!(this.password !== this.confirmPassword)) {
+          const cpe = document.getElementById("confirmPasswordAttention");
+          // cpe.textContent = "两次密码不一致";
+      }
   }
 }
